@@ -6,8 +6,8 @@ public class ApiServiceCat {
     @SerializedName("name")
     private String name;
 
-    @SerializedName("origins")
-    private String origins;
+    @SerializedName("origin")
+    private String origin;
 
     @SerializedName("description")
     private String description;
@@ -17,7 +17,7 @@ public class ApiServiceCat {
 
     public ApiServiceCat(String name, String origins, String description, String images) {
         this.name = name;
-        this.origins = origins;
+        this.origin = origins;
         this.description = description;
         this.images = images;
     }
@@ -40,11 +40,11 @@ public class ApiServiceCat {
     }
 
     public String getOrigins() {
-        return origins;
+        return origin;
     }
 
     public void setOrigins(String origins) {
-        this.origins = origins;
+        this.origin = origins;
     }
 
     public String getDescription() {
