@@ -10,16 +10,18 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.azhardevelop.example.com.model.ApiServiceCat;
-import com.jakewharton.picasso.OkHttp3Downloader;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
+
+import jp.wasabeef.picasso.transformations.RoundedCornersTransformation;
 
 public class CatAdapter extends RecyclerView.Adapter<CatAdapter.CatHolder> {
 
     Context context;
     LayoutInflater inflater;
     private List<ApiServiceCat> catList;
+    String image_url = "https://api.thecatapi.com/images/";
 
     public CatAdapter(MenuActivity activity, List<ApiServiceCat> catList) {
         this.context = activity;
@@ -41,12 +43,12 @@ public class CatAdapter extends RecyclerView.Adapter<CatAdapter.CatHolder> {
         catHolder.txtOri.setText(catList.get(position).getOrigins());
         catHolder.txtDesc.setText(catList.get(position).getDescription());
 
-        Picasso.Builder builder = new Picasso.Builder(context);
-        builder.downloader(new OkHttp3Downloader(context));
-        builder.build().load(catList.get(position).getImages())
-                .placeholder((R.drawable.cat))
+        Picasso.with(context).load(image_url)
+                .transform(new RoundedCornersTransformation(10, 10))
+                .placeholder(R.drawable.cat)
                 .error(R.drawable.cat)
                 .into(catHolder.imgCat);
+
     }
 
     @Override
