@@ -43,8 +43,11 @@ public class CatAdapter extends RecyclerView.Adapter<CatAdapter.CatHolder> {
         catHolder.txtOri.setText(catList.get(position).getOrigins());
         catHolder.txtDesc.setText(catList.get(position).getDescription());
 
-        Picasso.with(context).load(image_url)
-                .transform(new RoundedCornersTransformation(10, 10))
+        //Picasso
+        Picasso
+                .with(context)
+                .load(image_url + catList.get(position).getImages())
+                .transform(new RoundedCornersTransformation(8, 5))
                 .placeholder(R.drawable.cat)
                 .error(R.drawable.cat)
                 .into(catHolder.imgCat);
