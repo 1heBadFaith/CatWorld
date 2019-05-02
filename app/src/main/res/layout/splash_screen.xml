@@ -17,6 +17,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="60dp"
+                android:layout_marginTop="2dp"
                 android:fontFamily="@font/azedo"
                 android:text="Cat"
                 android:textAlignment="textEnd"
@@ -42,6 +43,14 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:max="100"
-            android:layout_marginBottom="200dp"
+            android:layout_marginBottom="150dp"
             android:progress="60" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:text="Hak Cipta © Azhar"
+        android:textColor="#000" />
 </RelativeLayout>
